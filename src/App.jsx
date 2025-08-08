@@ -2,6 +2,9 @@ import 'bulma/css/bulma.css';
 import './App.scss';
 import { useState } from 'react';
 
+import 'bulma/css/bulma.css';
+import './App.scss';
+
 export const goods = [
   'Dumplings',
   'Carrot',
@@ -16,7 +19,7 @@ export const goods = [
 ];
 
 export const App = () => {
-  let [selectedGood, setSelectedGood] = useState('Jam');
+  const [selectedGood, setSelectedGood] = useState('Jam');
 
   return (
     <main className="section container">
@@ -25,7 +28,7 @@ export const App = () => {
           'No goods selected'
         ) : (
           <>
-            {selectedGood}
+            {`${selectedGood} is selected`}
             <button
               data-cy="ClearButton"
               type="button"
@@ -35,6 +38,7 @@ export const App = () => {
           </>
         )}
       </h1>
+
       <table className="table">
         <tbody>
           {goods.map(good => (
